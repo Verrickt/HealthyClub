@@ -83,7 +83,7 @@ create table PreorderTicket
 ID int  not null auto_increment primary key,
 OrderedTime DateTime not null,
 Status nvarchar(10) check(Status in ('Placed','Cancelled')),
-ReviewStatus nvarchar(20) check(Status in ('Passed','Failed','NotReviewed')),
+ReviewStatus nvarchar(20) check(ReviewStatus in ('Passed','Failed','NotReviewed')),
 MemberShipCardID int not null,
 DedicatedServiceID int not null,
 foreign key(MemberShipCardID) references MemberShipCard(ID),
@@ -92,10 +92,11 @@ foreign key(DedicatedServiceID) references DedicatedService(ID)
 );
 
 
-create table OrderTicket
+create table ServiceTicket
 (
 ID int  not null auto_increment primary key,
 OrderedTime DateTime not null ,
+Status nvarchar(10) check(Status in ('Placed','Cancelled')),
 MemberShipCardID int not null,
 DedicatedServiceID int not null,
 foreign key(MemberShipCardID) references MemberShipCard(ID),
@@ -119,8 +120,10 @@ Amount decimal(10,2) not null,
 TimeFinished DateTime not null,
 PaymentMethodID int not null,
 CashierID int not null,
+ServiceTicketID int not null,
 foreign key(PaymentMethodID) references PaymentMethod(ID),
-foreign key(CashierID) references Employee(ID)
+foreign key(CashierID) references Employee(ID),
+foreign key(ServiceTicketID) references ServiceTicket(ID) 
 );
 
 
