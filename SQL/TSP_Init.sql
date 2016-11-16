@@ -13,16 +13,17 @@ create table User
 
 create table MemberShipCardLevel
 (
-	LevelID int not null auto_increment primary key,
+	ID int not null auto_increment primary key,
     LevelName nvarchar(20) not null
 );
-
 create table MemberShipCard
 (
 ID int not null auto_increment primary key,
 Fund decimal(10,2) not null check(Fund>=0),
 MemberShipLevel int not null,
-FOREIGN KEY(MemberShipLevel) references User(ID)
+UserID int not null,
+FOREIGN KEY(MemberShipLevel) references MemberShipCardLevel(ID),
+Foreign key(UserID) references User(ID)
 );
 create table HealthyDocument
 (
@@ -73,8 +74,8 @@ create table DaylyAvailibility
 ID int not null auto_increment primary key,
 StartTime time not null check(StartTime between '00:00:00' and '24:00:00'),
 EndTime time  not null,
-DayOfWeek int  not null check(DayOfWeek between 1 and 7),
 TechnicianID int  not null,
+DayOfWeek int  not null check(DayOfWeek between 1 and 7),
 foreign key (TechnicianID) references Technician(ID)
 );
 
