@@ -1,5 +1,5 @@
-create database TSP;
-use TSP;
+create database HealthyClub;
+use HealthyClub;
 create table User
 (
 	Name nvarchar(10) not null,
