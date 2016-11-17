@@ -131,5 +131,3 @@ foreign key(ServiceTicketID) references ServiceTicket(ID)
 
 
 
-
-drop database TSP
