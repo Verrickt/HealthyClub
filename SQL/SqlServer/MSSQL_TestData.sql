@@ -1,4 +1,6 @@
-use HealthyClub;
+GO
+use HealthyClub
+GO
 
 
 
@@ -17,11 +19,11 @@ use HealthyClub;
 -- );
 
 
+insert into [User] values ('Von','von@xxx.com','M',28,'2333','p@ssw0rd');
+insert into [User] values ('Gary','gary@xxx.com','M',24,'2333','p@ssw0rd');
+insert into [User] values ('Ann','ann@xxx.com','F',19,'2333','p@ssw0rd');
+insert into [User] values ('Peter','peter@xxx.com','M',26,'2333','p@ssw0rd');
 
-insert into User values ('Von',0,'von@xxx.com','M',28,'2333','p@ssw0rd');
-insert into User values ('Gary',0,'gary@xxx.com','M',24,'2333','p@ssw0rd');
-insert into User values ('Ann',0,'ann@xxx.com','F',19,'2333','p@ssw0rd');
-insert into User values ('Peter',0,'peter@xxx.com','M',26,'2333','p@ssw0rd');
 
 -- create table MemberShipCardLevel
 -- (
@@ -30,10 +32,10 @@ insert into User values ('Peter',0,'peter@xxx.com','M',26,'2333','p@ssw0rd');
 -- );
 
 
-insert into MemberShipCardLevel values (0,'铜牌会员');
-insert into MemberShipCardLevel values (0,'银牌会员');
-insert into MemberShipCardLevel values (0,'金牌会员');
-insert into MemberShipCardLevel values (0,'蜜汁会员');
+insert into MemberShipCardLevel values ('铜牌会员');
+insert into MemberShipCardLevel values ('银牌会员');
+insert into MemberShipCardLevel values ('金牌会员');
+insert into MemberShipCardLevel values ('蜜汁会员');
 
 
 
@@ -47,11 +49,10 @@ insert into MemberShipCardLevel values (0,'蜜汁会员');
 -- Foreign key(UserID) references User(ID)
 -- );
 
-insert into MemberShipCard values (0,2567.5,2,1);
-insert into MemberShipCard values (0,23246.23,3,2);
-insert into MemberShipCard values (0,5465.7,1,3);
-insert into MemberShipCard values (0,7985,1,4);
-
+insert into MemberShipCard values (2567.5,2,1);
+insert into MemberShipCard values (23246.23,3,2);
+insert into MemberShipCard values (5465.7,1,3);
+insert into MemberShipCard values (7985,1,4);
 
 
 
@@ -64,10 +65,10 @@ insert into MemberShipCard values (0,7985,1,4);
 
 -- );
 
-insert into HealthyDocument values (0,1,'HealthyForever');
-insert into HealthyDocument values (0,2,'HealthyForever');
-insert into HealthyDocument values (0,3,'VeryHealthy');
-insert into HealthyDocument values (0,4,'ABitHealthy');
+insert into HealthyDocument values (1,'HealthyForever');
+insert into HealthyDocument values (2,'HealthyForever');
+insert into HealthyDocument values (3,'VeryHealthy');
+insert into HealthyDocument values (4,'ABitHealthy');
 
 
 
@@ -85,11 +86,11 @@ insert into HealthyDocument values (0,4,'ABitHealthy');
 -- );
 
 
-insert into Employee values (0,'tank@xxx.com','M',25,'23333333','Big Boss','Tank','p@ssw0rd',0);
-insert into Employee values (0,'spitter@xxx.com','F',21,'13524355','cashier','Spitter','p@ssw0rd',1);
-insert into Employee values (0,'hunter@xxx.com','M',24,'23333333','Technician','hunter','p@ssw0rd',2);
-insert into Employee values (0,'boomer@xxx.com','M',10,'23333333','Technician','boomer','p@ssw0rd',2);
-insert into Employee values (0,'jockey@xxx.com','M',26,'23333333','Technician','jockey','p@ssw0rd',2);
+insert into Employee values ('tank@xxx.com','M',25,'23333333','Big Boss','Tank','p@ssw0rd',0);
+insert into Employee values ('spitter@xxx.com','F',21,'13524355','cashier','Spitter','p@ssw0rd',1);
+insert into Employee values ('hunter@xxx.com','M',24,'23333333','Technician','hunter','p@ssw0rd',2);
+insert into Employee values ('boomer@xxx.com','M',10,'23333333','Technician','boomer','p@ssw0rd',2);
+insert into Employee values ('jockey@xxx.com','M',26,'23333333','Technician','jockey','p@ssw0rd',2);
 
 
 -- create table Service
@@ -99,11 +100,11 @@ insert into Employee values (0,'jockey@xxx.com','M',26,'23333333','Technician','
 -- );
 
 
-insert into Service values(0,'推背');
-insert into Service values(0,'足疗');
-insert into Service values(0,'按摩');
-insert into Service values(0,'推拿');
-insert into Service values(0,'你懂的( ͡° ͜ʖ ͡°)');
+insert into Service values('推背');
+insert into Service values('足疗');
+insert into Service values('按摩');
+insert into Service values('推拿');
+insert into Service values('你懂的( ͡° ͜ʖ ͡°)');
 
 
 -- create table Technician
@@ -114,10 +115,10 @@ insert into Service values(0,'你懂的( ͡° ͜ʖ ͡°)');
 -- );
 
 
-insert into Technician values(0,3);
-insert into Technician values(0,4);
-insert into Technician values(0,5);
-insert into Technician values(0,2);
+insert into Technician values(3);
+insert into Technician values(4);
+insert into Technician values(5);
+insert into Technician values(2);
 
 
 -- create table DedicatedService
@@ -132,21 +133,24 @@ insert into Technician values(0,2);
 -- );
 
 
-insert into DedicatedService values(0,1,1,23.3);
-insert into DedicatedService values(0,1,2,145);
-insert into DedicatedService values(0,1,3,4);
+insert into DedicatedService values(1,1,23.3);
+insert into DedicatedService values(1,2,145);
+insert into DedicatedService values(1,3,4);
 
-insert into DedicatedService values(0,2,2,195);
-insert into DedicatedService values(0,2,4,163);
-insert into DedicatedService values(0,2,3,16);
+insert into DedicatedService values(2,2,195);
+insert into DedicatedService values(2,4,163);
+insert into DedicatedService values(2,3,16);
 
-insert into DedicatedService values(0,3,1,25);
-insert into DedicatedService values(0,3,4,150);
-insert into DedicatedService values(0,3,3,4);
+insert into DedicatedService values(3,1,25);
+insert into DedicatedService values(3,4,150);
+insert into DedicatedService values(3,3,4);
 
-insert into DedicatedService values(0,4,1,52.5);
-insert into DedicatedService values(0,4,2,14.5);
-insert into DedicatedService values(0,4,5,43);
+insert into DedicatedService values(4,1,52.5);
+insert into DedicatedService values(4,2,14.5);
+insert into DedicatedService values(4,5,43);
+
+
+
 
 -- create table DaylyAvailibility
 -- (
@@ -158,33 +162,39 @@ insert into DedicatedService values(0,4,5,43);
 -- foreign key (TechnicianID) references Technician(ID)
 -- );
 
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',1,1);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',1,2);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',1,3);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',1,4);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',1,5);
+
+
+insert into DaylyAvailibility values('08:00:00','16:00:00',1,1);
+insert into DaylyAvailibility values('08:00:00','16:00:00',1,2);
+insert into DaylyAvailibility values('08:00:00','16:00:00',1,3);
+insert into DaylyAvailibility values('08:00:00','16:00:00',1,4);
+insert into DaylyAvailibility values('08:00:00','16:00:00',1,5);
 
 
 
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',2,1);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',2,2);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',2,3);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',2,4);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',2,5);
 
 
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',3,1);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',3,2);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',3,3);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',3,4);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',3,5);
+insert into DaylyAvailibility values('08:00:00','16:00:00',2,1);
+insert into DaylyAvailibility values('08:00:00','16:00:00',2,2);
+insert into DaylyAvailibility values('08:00:00','16:00:00',2,3);
+insert into DaylyAvailibility values('08:00:00','16:00:00',2,4);
+insert into DaylyAvailibility values('08:00:00','16:00:00',2,5);
 
 
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,1);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,2);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,3);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,4);
-insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,5);
+insert into DaylyAvailibility values('08:00:00','16:00:00',3,1);
+insert into DaylyAvailibility values('08:00:00','16:00:00',3,2);
+insert into DaylyAvailibility values('08:00:00','16:00:00',3,3);
+insert into DaylyAvailibility values('08:00:00','16:00:00',3,4);
+insert into DaylyAvailibility values('08:00:00','16:00:00',3,5);
+
+
+insert into DaylyAvailibility values('08:00:00','16:00:00',4,1);
+insert into DaylyAvailibility values('08:00:00','16:00:00',4,2);
+insert into DaylyAvailibility values('08:00:00','16:00:00',4,3);
+insert into DaylyAvailibility values('08:00:00','16:00:00',4,4);
+insert into DaylyAvailibility values('08:00:00','16:00:00',4,5);
+
+
 
 
 -- create table PreorderTicket
@@ -200,10 +210,10 @@ insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,5);
 
 -- );
 
-insert into PreorderTicket values(0,'2016-10-10 12:00','Placed','Failed',1,4);
-insert into PreorderTicket values(0,'2016-11-11 16:00','Placed','Passed',2,5);
-insert into PreorderTicket values(0,'2015-10-10 13:00','Cancelled','NotReviewed',2,5);
-insert into PreorderTicket values(0,'2016-3-10 12:00','Placed','Passed',2,7);
+insert into PreorderTicket values('2016-10-10 12:00','Placed','Failed',1,4);
+insert into PreorderTicket values('2016-11-11 16:00','Placed','Passed',2,5);
+insert into PreorderTicket values('2015-10-10 13:00','Cancelled','NotReviewed',2,5);
+insert into PreorderTicket values('2016-3-10 12:00','Placed','Passed',2,7);
 
 
 
@@ -220,12 +230,12 @@ insert into PreorderTicket values(0,'2016-3-10 12:00','Placed','Passed',2,7);
 -- );
 
 
-insert into ServiceTicket values(0,'2016-10-10 12:00','Placed',1,4);
-insert into ServiceTicket values(0,'2016-11-11 16:00','Placed',2,5);
-insert into ServiceTicket values(0,'2015-10-10 13:00','Cancelled',2,5);
-insert into ServiceTicket values(0,'2016-3-10 13:00','Placed',2,7);
-insert into ServiceTicket values(0,'2015-10-10 14:00','Cancelled',2,5);
-insert into ServiceTicket values(0,'2016-3-10 17:00','Placed',3,12);
+insert into ServiceTicket values('2016-10-10 12:00','Placed',1,4);
+insert into ServiceTicket values('2016-11-11 16:00','Placed',2,5);
+insert into ServiceTicket values('2015-10-10 13:00','Cancelled',2,5);
+insert into ServiceTicket values('2016-3-10 13:00','Placed',2,7);
+insert into ServiceTicket values('2015-10-10 14:00','Cancelled',2,5);
+insert into ServiceTicket values('2016-3-10 17:00','Placed',3,12);
 
 
 
@@ -235,11 +245,11 @@ insert into ServiceTicket values(0,'2016-3-10 17:00','Placed',3,12);
 -- Name nvarchar(20) not null
 -- );
 
-insert into PaymentMethod values (0,'Alipay');
-insert into PaymentMethod values (0,'UnionPay');
-insert into PaymentMethod values (0,'Cash');
-insert into PaymentMethod values (0,'Credit Card');
-insert into PaymentMethod values (0,'MemberShipCard');
+insert into PaymentMethod values ('Alipay');
+insert into PaymentMethod values ('UnionPay');
+insert into PaymentMethod values ('Cash');
+insert into PaymentMethod values ('Credit Card');
+insert into PaymentMethod values ('MemberShipCard');
 
 
 -- create table PaymentRecord
@@ -255,5 +265,6 @@ insert into PaymentMethod values (0,'MemberShipCard');
 -- foreign key(ServiceTicketID) references ServiceTicket(ID) 
 -- );
 
-insert into PaymentRecord values(0,100,'2016-10-10 12:00',5,3,1);
-insert into PaymentRecord values(0,50,'2016-11-10 13:42',3,1,2);
+insert into PaymentRecord values(100,'2016-10-10 12:00',5,3,1);
+insert into PaymentRecord values(50,'2016-11-10 13:42',3,1,2);
+
