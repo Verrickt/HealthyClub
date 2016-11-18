@@ -4,10 +4,10 @@ create table [User]
 (
 	Name nvarchar(10) not null,
 	ID int not null IDENTITY(1,1) primary key,
-    Email nvarchar(50) not null,
-    Gender char(1) not null check(Gender in ('M','F')),
-	Age int not null check(Age>=0 and Age<=120),
-    PhoneNumber nvarchar(11),
+    Email nvarchar(50) ,
+    Gender char(1)  check(Gender in ('M','F')),
+	Age int  check(Age>=0 and Age<=120),
+    PhoneNumber nvarchar(11) not null,
     Password nvarchar(20) not null
 );
 
