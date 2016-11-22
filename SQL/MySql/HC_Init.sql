@@ -83,6 +83,7 @@ create table PreorderTicket
 (
 ID int  not null auto_increment primary key,
 OrderedTime DateTime not null,
+PreOrderedTime DateTime not null,
 Status nvarchar(10) check(Status in ('Placed','Cancelled')),
 ReviewStatus nvarchar(20) check(ReviewStatus in ('Passed','Failed','NotReviewed')),
 MemberShipCardID int not null,

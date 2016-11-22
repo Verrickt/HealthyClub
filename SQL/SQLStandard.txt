@@ -1,0 +1,48 @@
+
+ 
+1.	目的
+为了保证每个项目组编写出的程序都符合相同的规范，便于理解和维护，便于检查、减少出错概率，有助于成员间交流，保证一致性、统一性而建立的SQL程序编码规范。
+2.	范围
+该规范适用于所有需要基于SQL开发的项目。
+3.	规范内容
+3.1 命名规范
+A.表(Table):
+表名用复数 比如用Orders而不是Order,也不要用tbl_***。因为表是一个集合。
+
+B.视图(View):
+1. 用“VW_“当作前缀+两表合在一起的视图简单的把两个表的名字写在一起  eg. VW_CustomersOrders
+2. 类似报表的简单视图按其功能取名. eg. VW_Summary of Sales by Year
+
+C.存储过程(Stored procedures):
+动词(描述功能)_ + 名词(多半是表名) + By + 条件，不要以sp_开头
+eg. DeleteApply_Goods_Details
+GetApply_Goods_DetailsByDetail_ID
+D. 函数:
+和存储过程类似.
+
+
+E. 字段:
+对缩写单词使用帕斯卡命名法，如
+MembershipCard
+对所写单词，如长度不超过三则全部大写，否则使用帕斯卡命名法
+如
+ServiceID
+HttpException
+
+F. 变量
+1. 简洁最好，作用域越短命名应越简短，反之亦然
+2. 小驼峰
+3.2 排版及书写规范
+1. 统一使用4个空格缩进
+2. 对于多条语句，使用对应的关键字分割
+如
+
+go 
+create database HealthyClub
+go
+go
+use HealthyClub
+go
+
+create database HealthyClub;
+use HealthyClub;

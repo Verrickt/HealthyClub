@@ -191,6 +191,7 @@ insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,5);
 -- (
 -- ID int  not null auto_increment primary key,
 -- OrderedTime DateTime not null,
+-- PreOrderedTime DateTime not null,
 -- Status nvarchar(10) check(Status in ('Placed','Cancelled')),
 -- ReviewStatus nvarchar(20) check(ReviewStatus in ('Passed','Failed','NotReviewed')),
 -- MemberShipCardID int not null,
@@ -200,10 +201,10 @@ insert into DaylyAvailibility values(0,'08:00:00','16:00:00',4,5);
 
 -- );
 
-insert into PreorderTicket values(0,'2016-10-10 12:00','Placed','Failed',1,4);
-insert into PreorderTicket values(0,'2016-11-11 16:00','Placed','Passed',2,5);
-insert into PreorderTicket values(0,'2015-10-10 13:00','Cancelled','NotReviewed',2,5);
-insert into PreorderTicket values(0,'2016-3-10 12:00','Placed','Passed',2,7);
+insert into PreorderTicket values(0,'2016-10-10 11:00','2016-10-10 12:00','Placed','Failed',1,4);
+insert into PreorderTicket values(0,'2016-11-10 12:00','2016-11-11 16:00','Placed','Passed',2,5);
+insert into PreorderTicket values(0,'2016-10-8 12:00','2015-10-10 13:00','Cancelled','NotReviewed',2,5)
+insert into PreorderTicket values(0,'2016-3-10 11:59','2016-3-10 12:00','Placed','Passed',2,7);
 
 
 
