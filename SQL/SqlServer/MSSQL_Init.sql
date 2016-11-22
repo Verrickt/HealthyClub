@@ -1,5 +1,10 @@
+go
 create database HealthyClub;
+go
+go
 use HealthyClub;
+go
+go
 create table [User]
 (
 	Name nvarchar(10) not null,
@@ -9,7 +14,8 @@ create table [User]
 	Age int  check(Age>=0 and Age<=120),
     PhoneNumber nvarchar(11) not null,
     Password nvarchar(20) not null
-);
+)
+go
 
 
 create table MemberShipCardLevel
