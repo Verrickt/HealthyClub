@@ -28,9 +28,9 @@ create table MemberShipCard
 (
 ID int not null IDENTITY(1,1) primary key,
 Fund decimal(10,2) not null check(Fund>=0),
-MemberShipLevel int not null,
+MemberShipCardLevelID int not null,
 UserID int not null,
-FOREIGN KEY(MemberShipLevel) references MemberShipCardLevel(ID),
+FOREIGN KEY(MemberShipCardLevelID) references MemberShipCardLevel(ID),
 Foreign key(UserID) references [User](ID)
 )
 GO
