@@ -1,3 +1,9 @@
+//TODO
+
+remove MemberShipCardLevel
+
+
+
 User
 ---
 > Login(username,password)
@@ -25,6 +31,8 @@ MemberShipCard
 
 >List()
 
+>List(UserID)
+
 >Modify()
 
 
@@ -38,6 +46,7 @@ HealthyDocument
 
 >Modify()
 
+>List(UserID)
 
 
 Employee
@@ -49,6 +58,7 @@ Employee
 >Login(username,password)
 
 >Modify(ID)
+
 Service
 ---
 >Create()
@@ -68,6 +78,8 @@ Technician
 
 >List()
 
+>List(EmployeeID)
+
 
 DedicatedService
 ---
@@ -76,16 +88,9 @@ DedicatedService
 
 >Modify(ID)
 
->create(ServiceID,EmployeeID)
+>Create(ServiceID,EmployeeID)
 
 
-DaylyAvailibility
----
->List(TechnicianID)
-
->Modify(ID)
-
->Create(TechnicianID)
 
 PreorderTicket
 ---
@@ -95,6 +100,11 @@ PreorderTicket
 
 >List(TechnicianID)
 
+- All
+
+- Un Reviewed
+
+
 >Modify(ID)
 
 - Cancel
@@ -103,7 +113,7 @@ PreorderTicket
 
 - Review
 
->Create(MemberShipCardID,DedicatedService)
+>Create(MemberShipCardID,DedicatedServiceID)
 
 ServiceTicket
 ---
@@ -112,6 +122,7 @@ ServiceTicket
 >List(MemberShipCardID)
 
 >List(TechnicianID)
+
 
 >Modify(ID)
 
@@ -133,6 +144,8 @@ PaymentMethod
 
 PaymentRecord
 ---
+
+
 
 >List()
 
