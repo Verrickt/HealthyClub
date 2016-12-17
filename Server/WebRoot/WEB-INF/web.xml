@@ -9,10 +9,66 @@
         <servlet-name>UserServlet</servlet-name>
         <servlet-class>servlet.UserServlet</servlet-class>
     </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Serviceservlet</servlet-name>
+    <servlet-class>servlet.Serviceservlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PaymentMethodServlet</servlet-name>
+    <servlet-class>servlet.PaymentMethodServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PaymentRecordServlet</servlet-name>
+    <servlet-class>servlet.PaymentRecordServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServiceTicketServlet</servlet-name>
+    <servlet-class>servlet.ServiceTicketServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>PreorderTicketServlet</servlet-name>
+    <servlet-class>servlet.PreorderTicketServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Serviceservlet</servlet-name>
+    <url-pattern>/service</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PaymentMethodServlet</servlet-name>
+    <url-pattern>/paymentmethod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PaymentRecordServlet</servlet-name>
+    <url-pattern>/paymentrecord</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServiceTicketServlet</servlet-name>
+    <url-pattern>/serviceticket</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PreorderTicketServlet</servlet-name>
+    <url-pattern>/preorderticket</url-pattern>
+  </servlet-mapping>
  
 
 </web-app>
