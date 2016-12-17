@@ -22,6 +22,7 @@ MemberShipCardLevel
 
 > Modify(ID)
 
+
 >Create()
 
 MemberShipCard
@@ -98,22 +99,29 @@ PreorderTicket
 
 >List(MemberShipCardID)
 
->List(TechnicianID)
+>List(TechnicianID,filter)
+
+filter={"none","unreviewed"}
 
 - All
 
 - Un Reviewed
 
+>Review(ID,Status)
 
->Modify(ID)
+status={"passed","failed"}
 
-- Cancel
+>Cancel(ID)
 
-- Finish
+Status=> Cancelled
 
-- Review
+
 
 >Create(MemberShipCardID,DedicatedServiceID)
+
+ReviewStatus="NotReviewed"
+
+Status="Placed"
 
 ServiceTicket
 ---
@@ -124,15 +132,18 @@ ServiceTicket
 >List(TechnicianID)
 
 
->Modify(ID)
+>Cancel(ID)
 
 - Cancel
 
-- Finish
+Status="Cancelled"
+
 
 
 >Create(MemberShipCardID,DedicatedService)
 
+
+Status="Placed"
 
 PaymentMethod
 ---
@@ -156,6 +167,4 @@ PaymentRecord
 >List(UserID)
 
 >Create(PaymentMethodID,EmployeeID,ServiceTicketID)
-
-
 
