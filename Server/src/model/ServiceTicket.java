@@ -13,9 +13,9 @@ public class ServiceTicket implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private DedicatedService dedicatedService;
-	private MemberShipCard memberShipCard;
-	private Timestamp orderedTime;
+	private transient DedicatedService dedicatedService;
+	private transient MemberShipCard memberShipCard;
+	private transient Timestamp orderedTime;
 	private String status;
 	private transient Set paymentRecords = new HashSet(0);
 

@@ -11,9 +11,9 @@ public class PaymentRecord implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private PaymentMethod paymentMethod;
-	private ServiceTicket serviceTicket;
-	private Employee employee;
+	private transient PaymentMethod paymentMethod;
+	private transient ServiceTicket serviceTicket;
+	private transient Employee employee;
 	private Double amount;
 	private Timestamp timeFinished;
 

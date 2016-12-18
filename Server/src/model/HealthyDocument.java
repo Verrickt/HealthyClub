@@ -9,7 +9,7 @@ public class HealthyDocument implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private User user;
+	private transient User user;
 	private String notes;
 
 	// Constructors

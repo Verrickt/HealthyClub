@@ -11,8 +11,8 @@ public class PreorderTicket implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private DedicatedService dedicatedService;
-	private MemberShipCard memberShipCard;
+	private transient DedicatedService dedicatedService;
+	private transient MemberShipCard memberShipCard;
 	private Timestamp orderedTime;
 	private Timestamp preOrderedTime;
 	private String status;

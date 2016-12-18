@@ -11,7 +11,7 @@ public class DaylyAvailibility implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private Technician technician;
+	private transient Technician technician;
 	private Time startTime;
 	private Time endTime;
 	private Integer dayOfWeek;

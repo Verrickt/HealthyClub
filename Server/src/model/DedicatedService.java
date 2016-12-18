@@ -12,8 +12,8 @@ public class DedicatedService implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private Service service;
-	private Technician technician;
+	private transient Service service;
+	private transient Technician technician;
 	private Double price;
 
 	// Constructors
@@ -22,12 +22,15 @@ public class DedicatedService implements java.io.Serializable {
 	public DedicatedService() {
 	}
 
+
+
 	/** full constructor */
-	public DedicatedService(Service service, Technician technician, Double price) {
+	public DedicatedService(Service service, Technician technician,
+			Double price) {
 		this.service = service;
 		this.technician = technician;
 		this.price = price;
-
+		
 	}
 
 	// Property accessors
@@ -63,5 +66,7 @@ public class DedicatedService implements java.io.Serializable {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
+
+	
 
 }

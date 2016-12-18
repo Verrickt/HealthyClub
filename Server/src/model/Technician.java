@@ -12,7 +12,7 @@ public class Technician implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private Employee employee;
+	private transient Employee employee;
 	private transient Set daylyAvailibilities = new HashSet(0);
 	private transient Set dedicatedServices = new HashSet(0);
 
