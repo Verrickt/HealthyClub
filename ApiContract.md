@@ -129,12 +129,79 @@ levelID, levelName
 
 paymentmethod
 =
+action
+- list
+
+no parameter
+
+- modify
+
+PaymentMethodID,name
+
 
 paymentrecord
 =
 
+action
+
+- list
+
+no parameter
+- listEmployeeID
+
+EmployeeID
+
+- listPaymentMethodID
+
+PaymentMethodID
+
+- listUserID
+
+UserID
+
+- create
+
+
+PaymentMethodID,EmployeeID,ServiceTicketID,amount
+
+
+
+
 preorderticket
 =
+
+
+action
+
+- list
+
+no parameter
+- listMemberShipCardID
+
+MemberShipCardID
+- listTechnicianID
+
+filter in(null,' unreviewed')
+
+TechnicianID,filter
+
+
+- review
+
+ID,reviewStatus
+- cancel
+
+ID
+- create
+
+MemberShipCardID,DedicatedServiceID,preOrderedTime
+
+
+
+
+
+
+
 
 service
 =
@@ -155,6 +222,27 @@ serviceID,name
 
 serviceticket
 =
+
+
+action
+- list
+
+no parameter
+
+- listMemberShipCardID
+
+MemberShipCardID
+- listTechnicianID
+
+TechnicianID
+
+- cancel
+
+ID
+- create
+
+MemberShipCardID,DedicatedServiceID
+
 
 
 
