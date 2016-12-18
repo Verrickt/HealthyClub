@@ -81,7 +81,7 @@ documentID, note
 
 
 
-membershipCard
+membershipcard
 =
 action
 
@@ -127,13 +127,13 @@ levelID, levelName
 
 
 
-paymentMethod
+paymentmethod
 =
 
-paymentRecord
+paymentrecord
 =
 
-preorderTicket
+preorderticket
 =
 
 service
@@ -153,12 +153,12 @@ no parameter
 serviceID,name
 
 
-serviceTicket
+serviceticket
 =
 
 
 
-technicianServlet
+technician
 =
 action
 
