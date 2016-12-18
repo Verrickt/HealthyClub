@@ -10,13 +10,9 @@
 <form method="post" action="/HealthyClub/user">
 
 
-<input name="action" value="register" type="text"></input>
-<input name="name" type="text"></input>
+<input name="action" value="login" type="text"></input>
+<input name="username" type="text"></input>
 <input name="password" type="password"></input>
-<input name="age" type="text"></input>
-<input name="gender" type="text"></input>
-<input name="phoneNumber" type="text"></input>
-<input name="email" type="text"></input>
 
 
 <input type="submit"></input>

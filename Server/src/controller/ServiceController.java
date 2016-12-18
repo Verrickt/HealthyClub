@@ -11,36 +11,31 @@ import java.util.List;
 
 public class ServiceController extends ControllerBase {
 
-public static final String ERR_UNEXPECTED="ERR_UNEXPECTED";
+	public static final String ERR_UNEXPECTED = "ERR_UNEXPECTED";
 	private util.ResponseBuilder<Service> builder;
 	private final String format = "From Service where ID = '%d'";
 
-	public String ListServices()
+	public String list()
 
 	{
-		String msg=null;
-		List<Service> result=null;
+		String msg = null;
+		List<Service> result = null;
 		try {
-			List<Service> services = util.GenericHelper.GetResult(session,"from Service order by ID");
-			result=services;
-			msg= SUCCESS;
+			List<Service> services = util.GenericHelper.GetResult(session,
+					"from Service order by ID");
+			result = services;
+			msg = SUCCESS;
+		} catch (Exception e) {
+			msg = ERR_UNEXPECTED;
+			result = null;
+		} finally {
+			return new ResponseBuilder<List<Service>>(msg, result).toString();
+
 		}
-			catch(Exception e)
-			{
-				msg=ERR_UNEXPECTED;
-				result=null;
-			}
-			finally
-			{
-				return  new ResponseBuilder<List<Service>>(msg,result).toString();
 
-			}
-		
-
-		
 	}
-	public String CreateService(String name)
-	{
+
+	public String create(String name) {
 		Service result = null;
 		String msg = null;
 		Service service = new Service(name);
@@ -48,50 +43,41 @@ public static final String ERR_UNEXPECTED="ERR_UNEXPECTED";
 			Transaction t = session.beginTransaction();
 			session.save(service);
 			t.commit();
-			msg=SUCCESS;
+			msg = SUCCESS;
 			result = service;
-		}
-		catch (Exception e)
-		{
-			msg=ERR_UNEXPECTED;
+		} catch (Exception e) {
+			msg = ERR_UNEXPECTED;
 			result = null;
-		}
-		finally
-		{
-			return new ResponseBuilder<Service>(msg,result).toString();
+		} finally {
+			return new ResponseBuilder<Service>(msg, result).toString();
 
 		}
 
 	}
 
-	public String ModityService(Integer Id,String name)
-	{
+	public String modify(Integer Id, String name) {
 		Service result = null;
 		String msg = null;
-		String hql = String.format(format,Id);
+		String hql = String.format(format, Id);
 		Transaction t = session.beginTransaction();
 
 		try {
-			Service service = util.GenericHelper.<Service>GetResult(session,hql).get(0);
+			Service service = util.GenericHelper.<Service> GetResult(session,
+					hql).get(0);
 			service.setName(name);
 			session.update(service);
 			t.commit();
-			msg=SUCCESS;
+			msg = SUCCESS;
 			result = service;
-		}
-		catch (Exception e)
-		{
-			msg=ERR_UNEXPECTED;
+		} catch (Exception e) {
+			msg = ERR_UNEXPECTED;
 			t.rollback();
 			result = null;
-		}
-		finally
-		{
-			return new ResponseBuilder<Service>(msg,result).toString();
+		} finally {
+			return new ResponseBuilder<Service>(msg, result).toString();
 
 		}
 
 	}
-
 
 }

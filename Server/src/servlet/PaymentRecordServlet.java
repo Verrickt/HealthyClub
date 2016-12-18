@@ -1,4 +1,5 @@
 package servlet;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
@@ -23,10 +24,14 @@ public class PaymentRecordServlet extends HttpServlet {
 	 *
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -49,12 +54,17 @@ public class PaymentRecordServlet extends HttpServlet {
 	/**
 	 * The doPost method of the servlet. <br>
 	 *
-	 * This method is called when a form has its tag value method equals to post.
+	 * This method is called when a form has its tag value method equals to
+	 * post.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -65,21 +75,27 @@ public class PaymentRecordServlet extends HttpServlet {
 		if ("list".equals(action)) {
 			result = p.list();
 		} else if ("listEmployeeID".equals(action)) {
-			Integer EmployeeID = Integer.parseInt(request.getParameter("EmployeeID"));
+			Integer EmployeeID = Integer.parseInt(request
+					.getParameter("EmployeeID"));
 			result = p.listEmployeeID(EmployeeID);
 		} else if ("listPaymentMethodID".equals(action)) {
-			Integer PaymentMethodID = Integer.parseInt(request.getParameter("PaymentMethodID"));
+			Integer PaymentMethodID = Integer.parseInt(request
+					.getParameter("PaymentMethodID"));
 			result = p.listPaymentMethodID(PaymentMethodID);
 		} else if ("listUserID".equals(action)) {
 			Integer UserID = Integer.parseInt(request.getParameter("UserID"));
 			result = p.listUserID(UserID);
 		} else if ("create".equals(action)) {
-			Integer PaymentMethodID = Integer.parseInt(request.getParameter("PaymentMethodID"));
-			Integer EmployeeID = Integer.parseInt(request.getParameter("EmployeeID"));
-			Integer ServiceTicketID = Integer.parseInt(request.getParameter("ServiceTicketID"));
-			Double amount = Double.valueOf(request.getParameter("amount")); 
-			result = p.create(PaymentMethodID,EmployeeID,ServiceTicketID,amount);
+			Integer PaymentMethodID = Integer.parseInt(request
+					.getParameter("PaymentMethodID"));
+			Integer EmployeeID = Integer.parseInt(request
+					.getParameter("EmployeeID"));
+			Integer ServiceTicketID = Integer.parseInt(request
+					.getParameter("ServiceTicketID"));
+			Double amount = Double.valueOf(request.getParameter("amount"));
+			result = p.create(PaymentMethodID, EmployeeID, ServiceTicketID,
+					amount);
 		}
 		response.getWriter().println(result);
-    }
+	}
 }

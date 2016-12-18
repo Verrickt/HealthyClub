@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import controller.ServiceTicketController;
+
 @SuppressWarnings("serial")
 @WebServlet("/ServiceTicketServlet")
 public class ServiceTicketServlet extends HttpServlet {
@@ -20,10 +21,14 @@ public class ServiceTicketServlet extends HttpServlet {
 	 *
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -46,12 +51,17 @@ public class ServiceTicketServlet extends HttpServlet {
 	/**
 	 * The doPost method of the servlet. <br>
 	 *
-	 * This method is called when a form has its tag value method equals to post.
+	 * This method is called when a form has its tag value method equals to
+	 * post.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -62,20 +72,24 @@ public class ServiceTicketServlet extends HttpServlet {
 		if ("list".equals(action)) {
 			result = s.list();
 		} else if ("listMemberShipCardID".equals(action)) {
-			Integer MemberShipCardID = Integer.parseInt(request.getParameter("MemberShipCardID"));
+			Integer MemberShipCardID = Integer.parseInt(request
+					.getParameter("MemberShipCardID"));
 			result = s.listMemberShipCardID(MemberShipCardID);
 		} else if ("listTechnicianID".equals(action)) {
-			Integer TechnicianID = Integer.parseInt(request.getParameter("TechnicianID"));
+			Integer TechnicianID = Integer.parseInt(request
+					.getParameter("TechnicianID"));
 			result = s.listTechnicianID(TechnicianID);
 		} else if ("cancel".equals(action)) {
 			Integer ID = Integer.parseInt(request.getParameter("ID"));
 			result = s.Cancel(ID);
 		} else if ("create".equals(action)) {
-			Integer MemberShipCardID = Integer.parseInt(request.getParameter("MemberShipCardID"));
-			Integer DedicatedServiceID = Integer.parseInt(request.getParameter("DedicatedServiceID")); 
-			result = s.create(MemberShipCardID,DedicatedServiceID);
+			Integer MemberShipCardID = Integer.parseInt(request
+					.getParameter("MemberShipCardID"));
+			Integer DedicatedServiceID = Integer.parseInt(request
+					.getParameter("DedicatedServiceID"));
+			result = s.create(MemberShipCardID, DedicatedServiceID);
 		}
-		response.getWriter().println(result);	
+		response.getWriter().println(result);
 	}
 
 }

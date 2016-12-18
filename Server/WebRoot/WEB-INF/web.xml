@@ -5,7 +5,7 @@
     <welcome-file>index.jsp</welcome-file>
         <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
-    <servlet>
+  <servlet>
         <servlet-name>UserServlet</servlet-name>
         <servlet-class>servlet.UserServlet</servlet-class>
     </servlet>
@@ -39,13 +39,53 @@
     <servlet-name>PreorderTicketServlet</servlet-name>
     <servlet-class>servlet.PreorderTicketServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DedicatedServiceServlet</servlet-name>
+    <servlet-class>servlet.DedicatedServiceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <servlet-class>servlet.EmployeeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>HealthyDocumentServlet</servlet-name>
+    <servlet-class>servlet.HealthyDocumentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberShipCardLevelServlet</servlet-name>
+    <servlet-class>servlet.MemberShipCardLevelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TechnicianServlet</servlet-name>
+    <servlet-class>servlet.TechnicianServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MemberShipCard</servlet-name>
+    <servlet-class>servlet.MembershipCardServlet</servlet-class>
+  </servlet>
 
 
 
 
 
 
-    <servlet-mapping>
+
+
+
+
+  <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/user</url-pattern>
     </servlet-mapping>
@@ -69,6 +109,30 @@
     <servlet-name>PreorderTicketServlet</servlet-name>
     <url-pattern>/preorderticket</url-pattern>
   </servlet-mapping>
- 
+  <servlet-mapping>
+    <servlet-name>DedicatedServiceServlet</servlet-name>
+    <url-pattern>/dedicatedservice</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <url-pattern>/employee</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HealthyDocumentServlet</servlet-name>
+    <url-pattern>/healthydocument</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberShipCardLevelServlet</servlet-name>
+    <url-pattern>/membershipcardlevel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TechnicianServlet</servlet-name>
+    <url-pattern>/technician</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MemberShipCard</servlet-name>
+    <url-pattern>/membershipcard</url-pattern>
+  </servlet-mapping>
+
 
 </web-app>

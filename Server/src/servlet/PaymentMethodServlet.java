@@ -1,4 +1,5 @@
 package servlet;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import controller.PaymentMethodController;
+
 @SuppressWarnings("serial")
 @WebServlet("/PaymentMethodServlet")
 public class PaymentMethodServlet extends HttpServlet {
@@ -16,10 +18,14 @@ public class PaymentMethodServlet extends HttpServlet {
 	 *
 	 * This method is called when a form has its tag value method equals to get.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -42,27 +48,33 @@ public class PaymentMethodServlet extends HttpServlet {
 	/**
 	 * The doPost method of the servlet. <br>
 	 *
-	 * This method is called when a form has its tag value method equals to post.
+	 * This method is called when a form has its tag value method equals to
+	 * post.
 	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
+	 * @param request
+	 *            the request send by the client to the server
+	 * @param response
+	 *            the response send by the server to the client
+	 * @throws ServletException
+	 *             if an error occurred
+	 * @throws IOException
+	 *             if an error occurred
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		PaymentMethodController p = new PaymentMethodController();
 		String action = request.getParameter("action");
 		String result = null;
 		if ("list".equals(action)) {
 			result = p.list();
 		} else if ("modify".equals(action)) {
-		  String name = request.getParameter("name");
-		  Integer PaymentMethodID = Integer.parseInt(request.getParameter("PaymentMethodID"));
-	      result = p.modify(PaymentMethodID, name);
+			String name = request.getParameter("name");
+			Integer PaymentMethodID = Integer.parseInt(request
+					.getParameter("PaymentMethodID"));
+			result = p.modify(PaymentMethodID, name);
 		}
-		response.getWriter().println(result);		
+		response.getWriter().println(result);
 	}
 
 }
