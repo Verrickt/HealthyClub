@@ -1,7 +1,9 @@
 ApiContract
 
 
-url pattern : Domain/HealthyClub/
+url pattern : Domain/HealthyClub/module
+
+# PLEASE USE HTTP POST METHOD!!!!!!!!!!
 
 
 
