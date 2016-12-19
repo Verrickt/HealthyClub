@@ -276,6 +276,10 @@ name,email,age,gender in('F','M'),phoneNumber,password
 
 - list
 
+filter in {"","membershipcardID"}
+
+filter,membershipcardID
+
 No parameter
 
 - modify
