@@ -84,10 +84,10 @@ public class PreorderTicketServlet extends HttpServlet {
 		} else if ("review".equals(action)) {
 			Integer ID = Integer.parseInt(request.getParameter("ID"));
 			String reviewStatus = request.getParameter("reviewStatus");
-			result = p.review(ID, reviewStatus);
+			result = p.Review(ID, reviewStatus);
 		} else if ("cancel".equals(action)) {
 			Integer ID = Integer.parseInt(request.getParameter("ID"));
-			result = p.cancel(ID);
+			result = p.Cancel(ID);
 		} else if ("create".equals(action)) {
 			Integer MemberShipCardID = Integer.parseInt(request
 					.getParameter("MemberShipCardID"));
