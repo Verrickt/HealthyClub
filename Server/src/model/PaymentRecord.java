@@ -17,6 +17,7 @@ public class PaymentRecord implements java.io.Serializable {
 	private Double amount;
 	private Timestamp timeFinished;
 
+
 	// Constructors
 
 	/** default constructor */

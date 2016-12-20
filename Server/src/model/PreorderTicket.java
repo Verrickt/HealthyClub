@@ -18,6 +18,9 @@ public class PreorderTicket implements java.io.Serializable {
 	private String status;
 	private String reviewStatus;
 
+	public String UserName;
+	public String ServiceName;
+
 	// Constructors
 
 	/** default constructor */
