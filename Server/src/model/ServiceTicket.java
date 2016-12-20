@@ -15,9 +15,13 @@ public class ServiceTicket implements java.io.Serializable {
 	private Integer id;
 	private transient DedicatedService dedicatedService;
 	private transient MemberShipCard memberShipCard;
-	private transient Timestamp orderedTime;
+	private Timestamp orderedTime;
 	private String status;
 	private transient Set paymentRecords = new HashSet(0);
+
+	public String DedicatedServiceName;
+	public String UserName;
+
 
 	// Constructors
 
