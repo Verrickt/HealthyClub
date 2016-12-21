@@ -231,7 +231,7 @@ action
 
 no parameter
 
-- listMemberShipCardID
+ listMemberShipCardID
 
 MemberShipCardID
 - listTechnicianID
@@ -272,7 +272,7 @@ username,password
 
 - create
 
-name,email,age,gender in('F','M'),phoneNumber,password
+name,email,age,gender in('F','M'),phonenumber,password
 
 - list
 
