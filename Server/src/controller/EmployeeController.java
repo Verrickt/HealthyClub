@@ -47,6 +47,8 @@ public class EmployeeController extends ControllerBase {
 		Transaction tran = session.beginTransaction();
 
 		try {
+			if(gender.length()>1)
+				gender="M";
 			session.save(employee);
 			tran.commit();
 			result = employee;
@@ -75,6 +77,8 @@ public class EmployeeController extends ControllerBase {
 		String msg = null;
 		Employee result = null;
 		Employee employee = null;
+		if(gender.length()>1)
+			gender="M";
 		employee = (Employee) session.get(Employee.class, employeeID);
 		employee.setName(name);
 		employee.setEmail(email);

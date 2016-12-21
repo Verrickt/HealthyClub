@@ -44,12 +44,15 @@ public class UserController extends ControllerBase {
 		String msg = null;
 		User result = null;
 		User user = new User(name, phoneNumber, password);
+		if(gender.length()>1)
+			gender="M";
 		user.setAge(age);
 		user.setGender(gender);
 		user.setEmail(email);
 		Transaction tran = session.beginTransaction();
 
 		try {
+			
 			session.save(user);
 			tran.commit();
 			result = user;
@@ -58,6 +61,7 @@ public class UserController extends ControllerBase {
 		} catch (Exception e) {
 			msg = ERR_REGISTER_FAILED;
 			tran.rollback();
+			msg=e.getMessage();
 		} finally {
 			return new ResponseBuilder<User>(msg, result).toString();
 		}
@@ -71,6 +75,8 @@ public class UserController extends ControllerBase {
 		Transaction t = session.beginTransaction();
 		try {
 			User u = (User) session.get(User.class, userID);
+			if(gender.length()>1)
+				gender="M";
 			u.setAge(age);
 			u.setEmail(email);
 			u.setPhoneNumber(phoneNumber);

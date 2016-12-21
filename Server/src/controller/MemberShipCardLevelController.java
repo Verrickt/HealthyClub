@@ -57,6 +57,7 @@ public class MemberShipCardLevelController extends ControllerBase {
 			result = level;
 			msg = SUCCESS;
 		} catch (Exception e) {
+			msg=FAIL;
 			t.rollback();
 
 		} finally {
