@@ -1,14 +1,17 @@
 package controller;
 
 import java.util.Date;
+import java.util.Set;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.hibernate.Transaction;
 
 import model.DedicatedService;
 import model.MemberShipCard;
 import model.ServiceTicket;
+import model.Technician;
 import util.GenericHelper;
 import util.ResponseBuilder;
 
@@ -33,17 +36,23 @@ public class ServiceTicketController extends ControllerBase {
 	    }
 	 public String listTechnicianID(Integer TechnicianID)
 	    {
-		    ServiceTicket result=null;
+		    List<ServiceTicket> result=null;
 	        String msg=null;
 	        String hql="from ServiceTicket s,DedicatedService d where s.dedicatedService=d.id and d.technician=\'"+ TechnicianID +"\'";	       
-	        List<Object> list=
-	    	        GenericHelper.GetResult(session,hql);
-	        for(int i = 0; i < list.size(); i++)
-	       	 
+	        Technician t = (Technician)session.get(Technician.class, TechnicianID);
+	        Set ds = t.getDedicatedServices();
+	        
+	        List<ServiceTicket> tickets = GenericHelper.GetResult(session, "From ServiceTicket");
+	        
+	      
 	        {
-	            Object []obj = (Object[])list.get(i);  //转型为数组
-	            result = (ServiceTicket)obj[0];  //和select中顺序的类型相对应,可以是类
+	        	result = tickets.stream().filter(x->ds.contains(x))
+	        			.filter(x->x.getStatus().equals(filter)).collect(Collectors.toList());
 	        }
+	        
+	        
+	               
+	       
 	        msg=SUCCESS;
 	        return new ResponseBuilder(msg,result).toString();
 	    }

@@ -35,6 +35,8 @@ public class PreorderTicket implements java.io.Serializable {
 		this.memberShipCard = memberShipCard;
 		this.orderedTime = orderedTime;
 		this.preOrderedTime = preOrderedTime;
+		this.UserName=memberShipCard.getUser().getName();
+		this.ServiceName=dedicatedService.getService().getName();
 	}
 
 	/** full constructor */

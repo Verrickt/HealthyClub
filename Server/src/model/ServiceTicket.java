@@ -35,6 +35,8 @@ public class ServiceTicket implements java.io.Serializable {
 		this.dedicatedService = dedicatedService;
 		this.memberShipCard = memberShipCard;
 		this.orderedTime = orderedTime;
+		this.DedicatedServiceName=dedicatedService.getService().getName();
+		this.UserName=memberShipCard.getUser().getName();
 	}
 
 	/** full constructor */

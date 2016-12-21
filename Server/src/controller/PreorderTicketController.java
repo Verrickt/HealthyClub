@@ -1,12 +1,17 @@
 package controller;
 import java.util.Date;
+import java.util.Set;
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.hibernate.Transaction;
 
 import model.DedicatedService;
 import model.MemberShipCard;
 import model.PreorderTicket;
+import model.ServiceTicket;
+import model.Technician;
 import util.GenericHelper;
 import util.ResponseBuilder;
 public class PreorderTicketController extends ControllerBase {
@@ -33,22 +38,23 @@ public class PreorderTicketController extends ControllerBase {
 	    {
 	        String msg=null;
 	        String hql="";
-	        PreorderTicket tickets=null;
-	        if("unreviewed".equals(filter)) {
-	        	hql="from PreorderTicket p,DedicatedService d where p.dedicatedService=d.id and" +
-	        			" p.reviewStatus='notreviewed' and d.technician=\'"+ TechnicianID +"\'";
-	        } else {
-	        	hql="from PreorderTicket p where p.dedicatedService=DedicatedService d where p.dedicatedService=d.id and d.technician=\'"+ TechnicianID +"\'";
-	        }	        
-	        List<Object> list=
-	    	        GenericHelper.GetResult(session,hql);
+	        List<PreorderTicket> result;
+	        Technician t = (Technician)session.get(Technician.class, TechnicianID);
+	        Set ds = t.getDedicatedServices();
 	        
-	        for(int i = 0; i < list.size(); i++)
-	 
-	        { 
-	            Object []obj = (Object[])list.get(i);  //转型为数组
-	            tickets = (PreorderTicket)obj[0];  //和select中顺序的类型相对应,可以是类
-	        }
+	        List<PreorderTicket> tickets = GenericHelper.GetResult(session, "From PreorderTicket");
+	        
+	        
+	        
+	        if("unreviewed".equals(filter)) {
+	        	result = tickets.stream().filter(pt->pt.getReviewStatus().equals(filter))
+	        	.filter(pt->ds.contains(pt.getDedicatedService())).collect(Collectors.toList());
+	        	
+	        } else {
+	        	result = tickets.stream()
+	    	        	.filter(pt->ds.contains(pt.getDedicatedService())).collect(Collectors.toList());
+	        }	        
+	       
 	        msg=SUCCESS;
 	        return new ResponseBuilder(msg,tickets).toString();
 	    }

@@ -78,6 +78,7 @@ public class ServiceTicketServlet extends HttpServlet {
 		} else if ("listTechnicianID".equals(action)) {
 			Integer TechnicianID = Integer.parseInt(request
 					.getParameter("TechnicianID"));
+			
 			result = s.listTechnicianID(TechnicianID);
 		} else if ("cancel".equals(action)) {
 			Integer ID = Integer.parseInt(request.getParameter("ID"));
