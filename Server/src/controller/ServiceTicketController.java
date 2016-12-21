@@ -47,7 +47,7 @@ public class ServiceTicketController extends ControllerBase {
 	      
 	        {
 	        	result = tickets.stream().filter(x->ds.contains(x))
-	        			.filter(x->x.getStatus().equals(filter)).collect(Collectors.toList());
+	        			.collect(Collectors.toList());
 	        }
 	        
 	        

@@ -66,6 +66,7 @@ public class UserController extends ControllerBase {
 
 	public String modify(Integer userID, String name, String email,
 			Integer age, String gender, String phoneNumber, String password) {
+		User result = null;
 		String msg = "";
 		Transaction t = session.beginTransaction();
 		try {
@@ -78,13 +79,15 @@ public class UserController extends ControllerBase {
 			u.setName(name);
 			session.update(u);
 			t.commit();
+			result=u;
 			msg = SUCCESS;
 
 		} catch (Exception e) {
 			t.rollback();
 			msg = ERR_USER_NOT_EXIST;
+			msg=e.getMessage();
 		} finally {
-			return new ResponseBuilder(msg, null).toString();
+			return new ResponseBuilder(msg, result).toString();
 		}
 	}
 
