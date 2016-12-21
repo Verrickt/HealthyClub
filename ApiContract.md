@@ -21,7 +21,7 @@ serviceID, technicianID, price
 
 - list
 
-filter in(null,'byTechnicianID')
+filter in(""(empty string),'byTechnicianID')
 
 
 filter,technicianID
@@ -70,7 +70,7 @@ userID, note
 
 
 
-filter in(null,'byuserID')
+filter in(""(empty string),'byuserID')
 
 
 filter,userID
@@ -96,7 +96,7 @@ userID, levelID, fund;
 
 - list
 
-filter in(null,'byuserID')
+filter in(""(empty string),'byuserID')
 
 
 filter,userID
@@ -183,7 +183,7 @@ no parameter
 MemberShipCardID
 - listTechnicianID
 
-filter in(null,' unreviewed')
+filter in(""(empty string),' unreviewed')
 
 TechnicianID,filter
 
