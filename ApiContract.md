@@ -91,8 +91,9 @@ action
 
  - create
 
-userID, levelID, fund;
+levelname, levelID, fund;
 
+//levelname is a mistype for userID.
 
 - list
 
