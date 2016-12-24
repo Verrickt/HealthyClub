@@ -19,10 +19,13 @@ public class ServiceTicketController extends ControllerBase {
 	 public String list()
 	    {
 	        String msg=null;
-	        List<ServiceTicket> cards=
+	        List<ServiceTicket> tickets=
 	        GenericHelper.GetResult(session,"From ServiceTicket");
 	        msg=SUCCESS;
-	        return new ResponseBuilder(msg,cards).toString();
+	        
+	        tickets.forEach(x->x.init());
+	        
+	        return new ResponseBuilder(msg,tickets).toString();
 
 	    }
 	 public String listMemberShipCardID(Integer MemberShipCardID)
@@ -31,6 +34,7 @@ public class ServiceTicketController extends ControllerBase {
 	        List<ServiceTicket> tickets=
 	    	        GenericHelper.GetResult(session,"From ServiceTicket where MemberShipCardID=\'"+ MemberShipCardID +"\'");
 	        msg=SUCCESS;
+	        tickets.forEach(x->x.init());
 	        return new ResponseBuilder(msg,tickets).toString();
 
 	    }
@@ -51,7 +55,7 @@ public class ServiceTicketController extends ControllerBase {
 	        }
 	        
 	        
-	               
+	       result.forEach(x->x.init());
 	       
 	        msg=SUCCESS;
 	        return new ResponseBuilder(msg,result).toString();
@@ -69,6 +73,7 @@ public class ServiceTicketController extends ControllerBase {
 	            t.commit();
 	            msg=SUCCESS;
 	            result = ticket;
+	            result.init();
 	        }
 	        catch (Exception e)
 	        {
@@ -100,6 +105,7 @@ public class ServiceTicketController extends ControllerBase {
 	            t.commit();
 	            msg=SUCCESS;
 	            result = ticket;
+	            result.init();
 	        }
 	        catch (Exception e)
 	        {

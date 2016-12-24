@@ -18,10 +18,26 @@ public class PreorderTicket implements java.io.Serializable {
 	private String status;
 	private String reviewStatus;
 
-	public String UserName;
-	public String ServiceName;
+	private String userName;
+	private String serviceName;
 
 	// Constructors
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getServiceName() {
+		return serviceName;
+	}
+
+	public void setServiceName(String serviceName) {
+		this.serviceName = serviceName;
+	}
 
 	/** default constructor */
 	public PreorderTicket() {
@@ -35,8 +51,7 @@ public class PreorderTicket implements java.io.Serializable {
 		this.memberShipCard = memberShipCard;
 		this.orderedTime = orderedTime;
 		this.preOrderedTime = preOrderedTime;
-		this.UserName=memberShipCard.getUser().getName();
-		this.ServiceName=dedicatedService.getService().getName();
+		init();
 	}
 
 	/** full constructor */
@@ -49,8 +64,17 @@ public class PreorderTicket implements java.io.Serializable {
 		this.preOrderedTime = preOrderedTime;
 		this.status = status;
 		this.reviewStatus = reviewStatus;
+		init();
+		
 	}
 
+	public void init()
+	{
+		this.userName=memberShipCard.getUser().getName();
+		this.serviceName=dedicatedService.getService().getName();	
+	}
+	
+	
 	// Property accessors
 
 	public Integer getId() {

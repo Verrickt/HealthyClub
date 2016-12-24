@@ -20,6 +20,8 @@ public class PreorderTicketController extends ControllerBase {
 	        String msg=null;	   
 	        List<PreorderTicket> tickets=
 	        GenericHelper.GetResult(session,"From PreorderTicket");
+	        tickets.stream().forEach(x->x.init());
+	        
 	        msg=SUCCESS;
 	        return new ResponseBuilder(msg,tickets).toString();
 
@@ -30,6 +32,8 @@ public class PreorderTicketController extends ControllerBase {
 	        List<PreorderTicket> tickets=
 	    	        GenericHelper.GetResult(session,"From PreorderTicket where MemberShipCardID=\'"+ MemberShipCardID +"\'");
 	        msg=SUCCESS;
+	        tickets.stream().forEach(x->x.init());
+
 	        return new ResponseBuilder(msg,tickets).toString();
 
 	    }
@@ -54,7 +58,8 @@ public class PreorderTicketController extends ControllerBase {
 	        	result = tickets.stream()
 	    	        	.filter(pt->ds.contains(pt.getDedicatedService())).collect(Collectors.toList());
 	        }	        
-	       
+
+	        result.stream().forEach(x->x.init());
 	        msg=SUCCESS;
 	        return new ResponseBuilder(msg,tickets).toString();
 	    }
@@ -72,6 +77,7 @@ public class PreorderTicketController extends ControllerBase {
 	            t.commit();
 	            msg=SUCCESS;
 	            result = ticket;
+	            result.init();
 	        }
 	        catch (Exception e)
 	        {
@@ -98,6 +104,7 @@ public class PreorderTicketController extends ControllerBase {
 	            t.commit();
 	            msg=SUCCESS;
 	            result = ticket;
+	            result.init();
 	        }
 	        catch (Exception e)
 	        {
@@ -129,6 +136,8 @@ public class PreorderTicketController extends ControllerBase {
 	            t.commit();
 	            msg=SUCCESS;
 	            result = ticket;
+		        result.init();
+
 	        }
 	        catch (Exception e)
 	        {

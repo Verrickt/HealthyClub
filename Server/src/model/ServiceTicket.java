@@ -19,8 +19,24 @@ public class ServiceTicket implements java.io.Serializable {
 	private String status;
 	private transient Set paymentRecords = new HashSet(0);
 
-	public String DedicatedServiceName;
-	public String UserName;
+	public String dedicatedServiceName;
+	public String getDedicatedServiceName() {
+		return dedicatedServiceName;
+	}
+
+	public void setDedicatedServiceName(String dedicatedServiceName) {
+		this.dedicatedServiceName = dedicatedServiceName;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String userName;
 
 
 	// Constructors
@@ -35,8 +51,12 @@ public class ServiceTicket implements java.io.Serializable {
 		this.dedicatedService = dedicatedService;
 		this.memberShipCard = memberShipCard;
 		this.orderedTime = orderedTime;
-		this.DedicatedServiceName=dedicatedService.getService().getName();
-		this.UserName=memberShipCard.getUser().getName();
+		init();
+	}
+
+	public void init() {
+		this.dedicatedServiceName=dedicatedService.getService().getName();
+		this.userName=memberShipCard.getUser().getName();
 	}
 
 	/** full constructor */
@@ -48,6 +68,7 @@ public class ServiceTicket implements java.io.Serializable {
 		this.orderedTime = orderedTime;
 		this.status = status;
 		this.paymentRecords = paymentRecords;
+		init();
 	}
 
 	// Property accessors
